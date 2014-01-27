@@ -19,12 +19,6 @@ public class SimpleDisjointSets implements IDisjointSet<Integer> {
 		}
 	}
 	
-	/**
-	 * Returns the name of the set in which given item is present
-	 * @param item The item to look for
-	 * @return The name of the set in which the item has been found
-	 * @throws IndexOutOfBoundsException if the item is smaller than 0 or larger or equal to the size of the disjointset total length
-	 */
 	public Integer find(Integer item) {
 		if (item < 0 || item >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", item, upTree.length));
@@ -32,7 +26,7 @@ public class SimpleDisjointSets implements IDisjointSet<Integer> {
 		int parent = upTree[item];
 		
 		if (parent < 0)
-			return parent;
+			return item;
 		
 		return find(parent);
 	}
@@ -45,6 +39,16 @@ public class SimpleDisjointSets implements IDisjointSet<Integer> {
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", setNameB, upTree.length));
 		
 		upTree[setNameA] = setNameB;
+	}
+
+	@Override
+	public int setCount() {
+		int count = 0;
+		for (int i = 0; i < upTree.length; i++) {
+			if (upTree[i] < 0)
+				count++;
+		}
+		return count;
 	}
 
 }

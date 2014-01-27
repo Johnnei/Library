@@ -17,5 +17,11 @@ public interface IDisjointSet<E> {
 	 * @throws IndexOutOfBoundsException if either <code>setNameA</code> or <code>setNameB</code> is smaller than 0 or larger or equal to the size of the disjointset total length
 	 */
 	public void union(E setNameA, E setNameB);
+	
+	/**
+	 * The amount of sets in this disjointset
+	 * @return
+	 */
+	public int setCount();
 
 }
