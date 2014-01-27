@@ -1,6 +1,6 @@
 package org.johnnei.structs;
 
-public class SimpleDisjointSets implements IDisjointSet {
+public class SimpleDisjointSets implements IDisjointSet<Integer> {
 	
 	/**
 	 * The up tree containing all the elements which are in all sets
@@ -25,7 +25,7 @@ public class SimpleDisjointSets implements IDisjointSet {
 	 * @return The name of the set in which the item has been found
 	 * @throws IndexOutOfBoundsException if the item is smaller than 0 or larger or equal to the size of the disjointset total length
 	 */
-	public int find(int item) {
+	public Integer find(Integer item) {
 		if (item < 0 || item >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", item, upTree.length));
 		
@@ -38,7 +38,7 @@ public class SimpleDisjointSets implements IDisjointSet {
 	}
 
 	@Override
-	public void union(int setNameA, int setNameB) {
+	public void union(Integer setNameA, Integer setNameB) {
 		if (setNameA < 0 || setNameA >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", setNameA, upTree.length));
 		if (setNameB < 0 || setNameB >= upTree.length)

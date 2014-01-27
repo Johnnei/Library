@@ -1,6 +1,6 @@
 package org.johnnei.structs;
 
-public interface IDisjointSet {
+public interface IDisjointSet<E> {
 	
 	/**
 	 * Returns the name of the set in which given item is present
@@ -8,7 +8,7 @@ public interface IDisjointSet {
 	 * @return The name of the set in which the item has been found
 	 * @throws IndexOutOfBoundsException if the item is smaller than 0 or larger or equal to the size of the disjointset total length
 	 */
-	public int find(int item);
+	public E find(E item);
 	
 	/**
 	 * Unions the two given sets
@@ -16,6 +16,6 @@ public interface IDisjointSet {
 	 * @param setNameB
 	 * @throws IndexOutOfBoundsException if either <code>setNameA</code> or <code>setNameB</code> is smaller than 0 or larger or equal to the size of the disjointset total length
 	 */
-	public void union(int setNameA, int setNameB);
+	public void union(E setNameA, E setNameB);
 
 }
