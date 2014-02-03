@@ -1,6 +1,5 @@
 package org.johnnei.structs;
 
-import java.util.LinkedList;
 
 public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 	
@@ -31,21 +30,11 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", item, upTree.length));
 		
 		int parent = upTree[item];
-		LinkedList<Integer> childs = new LinkedList<>();
 		
-		// Find parent while remembering the children
-		while (parent >= 0) {
-			childs.add(item);
-			item = parent;
-			parent = upTree[item];
-		}
+		if (parent < 0)
+			return item;
 		
-		// Set the children to be direct children of the parent
-		for (int child : childs) {
-			upTree[child] = item;
-		}
-		
-		return item;
+		return upTree[item] = find(parent);
 	}
 
 	@Override
