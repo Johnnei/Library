@@ -1,4 +1,4 @@
 Library
 =======
 
-Library created for later use which will contain all of my datastructures and generic algoritms.
+Library created for later use which will contain all of my data structures and generic algorithms.

@@ -8,6 +8,10 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 	 * The up tree containing all the elements which are in all sets
 	 */
 	private int[] upTree;
+	/**
+	 * The amount of sets in the set
+	 */
+	private int setCount;
 	
 	/**
 	 * Creates a new DisjointSets with the size given size.<br/>
@@ -19,6 +23,7 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 		for (int i = 0; i < n; i++) {
 			upTree[i] = -1;
 		}
+		setCount = n;
 	}
 	
 	public Integer find(Integer item) {
@@ -50,6 +55,9 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 		if (setNameB < 0 || setNameB >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", setNameB, upTree.length));
 		
+		if (setNameA == setNameB)
+			return;
+		
 		// Union by size
 		if (upTree[setNameA] < upTree[setNameB]) {
 			int size = upTree[setNameB];
@@ -60,16 +68,13 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 			upTree[setNameA] = setNameB;
 			upTree[setNameB] += size;
 		}
+		
+		--setCount;
 	}
 
 	@Override
 	public int setCount() {
-		int count = 0;
-		for (int i = 0; i < upTree.length; i++) {
-			if (upTree[i] < 0)
-				count++;
-		}
-		return count;
+		return setCount;
 	}
 
 }
