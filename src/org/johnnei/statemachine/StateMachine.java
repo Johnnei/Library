@@ -4,16 +4,16 @@ public class StateMachine<T> {
 	
 	private T object;
 	private IState<T> currentState;
-	/**
-	 * No idea why we would store this but oh well.
-	 */
-	@SuppressWarnings("unused")
-	private IState<T> previousState;
+	private Class<? extends Enum<?>> messageType;
 	
-	public StateMachine(T object) {
+	public StateMachine(T object, Class<? extends Enum<?>> acceptedMessageType) {
 		this.object = object;
+		messageType = acceptedMessageType;
 	}
 	
+	public StateMachine(T object) {
+		this(object, null);
+	}
 	public void update() {
 		if (currentState == null)
 			return;
@@ -25,9 +25,22 @@ public class StateMachine<T> {
 		if (currentState != null) {
 			currentState.exit(object);
 		}
-		previousState = currentState;
+		
 		state.init(object);
 		currentState = state;
+	}
+	
+	public void dispatchMessage(Message message) {
+		if (messageType == null) {
+			// This statemachine doesn't accept messages
+			return;
+		}
+		if (!message.getType().getClass().getName().equals(messageType.getName())) {
+			// Invalid message type
+			return;
+		}
+	
+		currentState.onReceiveMessage(object, message);
 	}
 
 }

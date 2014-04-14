@@ -13,5 +13,7 @@ public interface IState<T> {
 	public void execute(T object);
 	
 	public void exit(T object);
+	
+	public void onReceiveMessage(T object, Message message);
 
 }
