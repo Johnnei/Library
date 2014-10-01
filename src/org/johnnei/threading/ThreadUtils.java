@@ -1,4 +1,4 @@
-package org.johnnei.utils;
+package org.johnnei.threading;
 
 public class ThreadUtils {
 	

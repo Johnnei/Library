@@ -1,4 +1,4 @@
-package org.johnnei.structs;
+package org.johnnei.disjointset;
 
 
 public class OptimizedDisjointSets implements IDisjointSet<Integer> {

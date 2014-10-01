@@ -1,4 +1,4 @@
-package org.johnnei.utils;
+package org.johnnei.timer;
 
 public class Stopwatch {
 	
