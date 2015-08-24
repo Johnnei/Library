@@ -19,6 +19,7 @@ public class SimpleDisjointSets implements IDisjointSet<Integer> {
 		}
 	}
 	
+	@Override
 	public Integer find(Integer item) {
 		if (item < 0 || item >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", item, upTree.length));
