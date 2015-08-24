@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class Console {
 	
 	/**
-	 * Creates or re-uses an existing logger<br/>
+	 * Creates or re-uses an existing logger<br>
 	 * Calls <code>obtainLogger(String, Level, Formatter)</code> with <code>name</code>, <code>Level.INFO</code>, <code>new ConsoleFormatter()</code>
 	 * @param name the name of the logger
 	 * @return the logger instance
@@ -26,7 +26,7 @@ public class Console {
 	}
 	
 	/**
-	 * Creates or re-uses an existing logger<br/>
+	 * Creates or re-uses an existing logger<br>
 	 * Calls <code>obtainLogger(String, Level, Formatter)</code> with <code>name</code>, <code>minLevel</code>, <code>new ConsoleFormatter()</code>
 	 * @param name the name of the logger
 	 * @param minLevel the minimum reporting level
@@ -70,8 +70,8 @@ public class Console {
 	}
 	
 	/**
-	 * Creates a logger based on the name.<br/>
-	 * The logger will only output if the logged message is at least the given minLevel.<br/>
+	 * Creates a logger based on the name.<br>
+	 * The logger will only output if the logged message is at least the given minLevel.<br>
 	 * As second request of the same logger will NOT update the minLevel
 	 * @param name The name of the logger
 	 * @param minLevel The minimum level to log

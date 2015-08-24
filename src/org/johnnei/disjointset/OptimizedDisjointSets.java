@@ -13,18 +13,19 @@ public class OptimizedDisjointSets implements IDisjointSet<Integer> {
 	private int setCount;
 	
 	/**
-	 * Creates a new DisjointSets with the size given size.<br/>
+	 * Creates a new DisjointSets with the size given size.<br>
 	 * This will be able to store the values 0 - (n - 1)
 	 * @param size
 	 */
-	public OptimizedDisjointSets(int n) {
-		upTree = new int[n];
-		for (int i = 0; i < n; i++) {
+	public OptimizedDisjointSets(int size) {
+		upTree = new int[size];
+		for (int i = 0; i < size; i++) {
 			upTree[i] = -1;
 		}
-		setCount = n;
+		setCount = size;
 	}
-	
+
+	@Override
 	public Integer find(Integer item) {
 		if (item < 0 || item >= upTree.length)
 			throw new IndexOutOfBoundsException(String.format("Item %s can not be present in disjointset of size %s", item, upTree.length));

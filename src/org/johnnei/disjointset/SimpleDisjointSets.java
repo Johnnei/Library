@@ -8,13 +8,13 @@ public class SimpleDisjointSets implements IDisjointSet<Integer> {
 	private int[] upTree;
 	
 	/**
-	 * Creates a new DisjointSets with the size given size.<br/>
+	 * Creates a new DisjointSets with the size given size.<br>
 	 * This will be able to store the values 0 - (n - 1)
 	 * @param size
 	 */
-	public SimpleDisjointSets(int n) {
-		upTree = new int[n];
-		for (int i = 0; i < n; i++) {
+	public SimpleDisjointSets(int size) {
+		upTree = new int[size];
+		for (int i = 0; i < size; i++) {
 			upTree[i] = -1;
 		}
 	}

@@ -6,8 +6,8 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 /**
- * Used as a simple console logging format.<br/>
- * Uses {@link SimpleDateFormatter} to print logs in: <code>[dd-MM-yyyy HH:mm:ss] [level] [name] Message</code> 
+ * Used as a simple console logging format.<br>
+ * Format: <code>[dd-MM-yyyy HH:mm:ss] [level] [name] Message</code> 
  * @author Johnnei
  *
  */

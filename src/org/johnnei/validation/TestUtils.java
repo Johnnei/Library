@@ -14,7 +14,7 @@ public class TestUtils {
 	/**
 	 * Tests if the string is a valid 32-bit integer
 	 * @param string
-	 * @param the base of the number (default 10)
+	 * @param radix the base of the number (default 10)
 	 * @return
 	 */
 	public static boolean isInt(String string, int radix) {
