@@ -23,4 +23,23 @@
   	<url>https://github.com/Johnnei/Library/issues</url>
   </issueManagement>
   <url>https://github.com/Johnnei/Library</url>
+  <licenses>
+  	<license>
+  		<name>GNU Lesser General Public License v3.0</name>
+  		<url>http://choosealicense.com/licenses/lgpl-3.0/</url>
+  	</license>
+  </licenses>
+  <developers>
+  	<developer>
+  		<name>Johnnei</name>
+  		<email>johnnei07@live.nl</email>
+  		<organization>Johnnei</organization>
+  		<organizationUrl>http://johnnei.org</organizationUrl>
+  	</developer>
+  </developers>
+  <scm>
+  	<connection>scm:git:git@github.com:Johnnei/Library.git</connection>
+  	<developerConnection>scm:git:git@github.com:Johnnei/Library.git</developerConnection>
+  	<url>git@github.com:Johnnei/Library.git</url>
+  </scm>
 </project>
