@@ -41,7 +41,7 @@ public class ExpireCache {
 		return timeDiff > info.duration;
 	}
 	
-	private class ExpireInfo {
+	private final static class ExpireInfo {
 		public final long cacheTime;
 		public final long duration;
 		
