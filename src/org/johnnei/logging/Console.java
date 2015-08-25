@@ -10,8 +10,9 @@ import java.util.logging.Logger;
 /**
  * A Formatter which is used for the {@link Logger} instances to log data to the console.
  * @author Johnnei
- *
+ * @see {LoggerUtils} Replacement for this class
  */
+@Deprecated
 public class Console {
 	
 	/**

@@ -1,25 +1,26 @@
 package org.johnnei.logging;
 
-import java.text.SimpleDateFormat;
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 /**
- * Used as a simple console logging format.<br>
- * Format: <code>[dd-MM-yyyy HH:mm:ss] [level] [name] Message</code> 
+ * Formats a log line and timestamps it with the given date formatter
  * @author Johnnei
- * 
  *
- * @deprecated
- * @see LogFormatter
  */
-@Deprecated
-public class ConsoleFormatter extends Formatter {
+public class LogFormatter extends Formatter {
 	
-	public ConsoleFormatter() {
+	/**
+	 * The formatter which formats the timestamps for the message
+	 */
+	private DateFormat dateFormatter; 
+	
+	public LogFormatter(DateFormat dateFormatter) {
+		this.dateFormatter = dateFormatter;
 	}
-	
+
 	/**
 	 * Defines the format of the console output
 	 */
@@ -51,8 +52,7 @@ public class ConsoleFormatter extends Formatter {
 	 * @return
 	 */
 	private String generateDateTimeStamp() {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		Date resultdate = new Date(System.currentTimeMillis());
-		return dateFormat.format(resultdate);
+		return dateFormatter.format(resultdate);
 	}
 }
